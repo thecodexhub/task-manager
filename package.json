@@ -1,0 +1,25 @@
+{
+  "name": "task-manager",
+  "version": "1.0.0",
+  "description": "Create, read, update and delete tasks specific to users.",
+  "main": "index.js",
+  "scripts": {
+    "start": "ts-node-dev src/index.ts"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/thecodexhub/task-manager.git"
+  },
+  "author": "Sandip Pramanik",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/thecodexhub/task-manager/issues"
+  },
+  "homepage": "https://github.com/thecodexhub/task-manager#readme",
+  "dependencies": {
+    "@types/express": "^4.17.13",
+    "express": "^4.17.1",
+    "ts-node-dev": "^1.1.8",
+    "typescript": "^4.5.2"
+  }
+}
