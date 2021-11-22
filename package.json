@@ -4,7 +4,7 @@
   "description": "Create, read, update and delete tasks specific to users.",
   "main": "index.js",
   "scripts": {
-    "start": "ts-node-dev src/index.ts"
+    "start": "ts-node-dev index.ts"
   },
   "repository": {
     "type": "git",
