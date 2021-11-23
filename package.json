@@ -18,9 +18,11 @@
   "homepage": "https://github.com/thecodexhub/task-manager#readme",
   "dependencies": {
     "@types/express": "^4.17.13",
+    "dotenv": "^10.0.0",
     "express": "^4.17.1",
     "express-async-errors": "^3.1.1",
     "express-validator": "^6.13.0",
+    "mongoose": "^6.0.13",
     "ts-node-dev": "^1.1.8",
     "typescript": "^4.5.2"
   }
