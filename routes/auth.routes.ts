@@ -7,6 +7,8 @@ import { signoutController } from "../controllers/auth/signout";
 import { currentUserController } from "../controllers/auth/current-user";
 
 import { validateRequest } from "../middlewares/validate-request";
+import { currentUser } from "../middlewares/current-user";
+import { requireAuth } from "../middlewares/require-auth";
 
 const router = express.Router();
 const authUrl = "/api/v1/users";
@@ -38,6 +40,11 @@ router.post(
 );
 
 router.post(`${authUrl}/signout`, signoutController);
-router.get(`${authUrl}/currentuser`, currentUserController);
+router.get(
+  `${authUrl}/currentuser`,
+  currentUser,
+  requireAuth,
+  currentUserController
+);
 
 export { router as authRouter };
