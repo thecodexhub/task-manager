@@ -4,7 +4,15 @@
   "description": "Create, read, update and delete tasks specific to users.",
   "main": "index.js",
   "scripts": {
-    "start": "ts-node-dev index.ts"
+    "start": "ts-node-dev index.ts",
+    "test": "jest --watchAll --no-cache"
+  },
+  "jest": {
+    "preset": "ts-jest",
+    "testEnvironment": "node",
+    "setupFilesAfterEnv": [
+      "./test/setup.ts"
+    ]
   },
   "repository": {
     "type": "git",
@@ -18,6 +26,7 @@
   "homepage": "https://github.com/thecodexhub/task-manager#readme",
   "dependencies": {
     "@types/express": "^4.17.13",
+    "@types/jest": "^27.0.3",
     "@types/jsonwebtoken": "^8.5.6",
     "dotenv": "^10.0.0",
     "express": "^4.17.1",
@@ -27,5 +36,12 @@
     "mongoose": "^6.0.13",
     "ts-node-dev": "^1.1.8",
     "typescript": "^4.5.2"
+  },
+  "devDependencies": {
+    "@types/supertest": "^2.0.11",
+    "jest": "^27.3.1",
+    "mongodb-memory-server": "^8.0.3",
+    "supertest": "^6.1.6",
+    "ts-jest": "^27.0.7"
   }
 }
