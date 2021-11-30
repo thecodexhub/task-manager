@@ -13,6 +13,7 @@ interface TaskDoc extends mongoose.Document {
   description?: string;
   startTime: Date;
   finishTime: Date;
+  done: boolean;
   userId: string;
   createdAt: Date;
 }
@@ -37,6 +38,10 @@ const taskSchema = new mongoose.Schema(
     finishTime: {
       type: Date,
       required: true,
+    },
+    done: {
+      type: Boolean,
+      default: false,
     },
     userId: {
       type: String,
