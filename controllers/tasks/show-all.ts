@@ -1,5 +1,7 @@
 import { Request, Response } from "express";
+import { Task } from "../../models/task";
 
 export const showAllController = async (req: Request, res: Response) => {
-  res.send("Hey there, this is show all task controller!");
+  const tasks = await Task.find({ userId: req.currentUser!.id });
+  res.status(200).send(tasks);
 };
