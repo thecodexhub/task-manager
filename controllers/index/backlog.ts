@@ -1,5 +1,12 @@
 import { Request, Response } from "express";
 
+import { Task } from "../../models/task";
+
 export const backlogController = async (req: Request, res: Response) => {
-  res.send("Hi this is the backlog controller");
+  const tasks = await Task.find({
+    userId: req.currentUser!.id,
+    finishTime: { $lte: new Date() },
+  });
+
+  res.status(200).send(tasks);
 };
