@@ -5,6 +5,7 @@ import { Task } from "../../models/task";
 export const progressController = async (req: Request, res: Response) => {
   const tasks = await Task.find({
     userId: req.currentUser!.id,
+    done: false,
     startTime: { $lte: new Date() },
     finishTime: { $gte: new Date() },
   });
