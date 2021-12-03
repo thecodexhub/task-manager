@@ -15,12 +15,13 @@ export const updateController = async (req: Request, res: Response) => {
     throw new NotAuthorizedError();
   }
 
-  const { title, description, startTime, finishTime } = req.body;
+  const { title, description, startTime, finishTime, done } = req.body;
 
   if (title) task.title = title;
   if (description) task.description = description;
   if (startTime) task.startTime = startTime;
   if (finishTime) task.finishTime = finishTime;
+  if (done) task.done = done;
 
   await task.save();
   res.status(200).send(task);

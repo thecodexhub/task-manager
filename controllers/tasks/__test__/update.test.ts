@@ -40,3 +40,27 @@ it("returns 401 if the task is created by the current user", async () => {
     })
     .expect(401);
 });
+
+it("updates the done field", async () => {
+  const user = global.signin();
+
+  const response = await request(app)
+    .post("/api/v1/tasks")
+    .set("x-access-token", user)
+    .send({
+      title,
+      startTime,
+      finishTime,
+    })
+    .expect(201);
+
+  const taskResponse = await request(app)
+    .patch(`/api/v1/tasks/${response.body.id}`)
+    .set("x-access-token", user)
+    .send({
+      done: true,
+    })
+    .expect(200);
+
+  expect(taskResponse.body.done).toEqual(true);
+});

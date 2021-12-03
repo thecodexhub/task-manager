@@ -78,6 +78,10 @@ router.patch(
       .isISO8601()
       .toDate()
       .withMessage("Please provide a valid end time"),
+    body("done")
+      .optional()
+      .isBoolean()
+      .withMessage("This must be either true or false"),
   ],
   validateRequest,
   updateController
