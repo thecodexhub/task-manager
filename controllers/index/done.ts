@@ -1,5 +1,12 @@
 import { Request, Response } from "express";
 
+import { Task } from "../../models/task";
+
 export const doneController = async (req: Request, res: Response) => {
-  res.send("Hi this is the done controller");
+  const tasks = await Task.find({
+    userId: req.currentUser!.id,
+    done: true,
+  });
+
+  res.status(200).send(tasks);
 };
