@@ -1,6 +1,6 @@
 # Task Manager
 
-Backend for Task Manager app built in NodeJS and ExpressJS using Typescript. Still working on it...
+Backend for Task Manager app built in NodeJS and ExpressJS using Typescript.
 
 ## Features:
 
