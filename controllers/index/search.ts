@@ -1,5 +1,13 @@
 import { Request, Response } from "express";
 
+import { Task } from "../../models/task";
+
 export const searchController = async (req: Request, res: Response) => {
-  res.send("Hi this is the search controller");
+  const { input } = req.body;
+  const tasks = await Task.find({
+    userId: req.currentUser!.id,
+    title: { $regex: input, $options: "i" },
+  });
+
+  res.status(200).send(tasks);
 };
