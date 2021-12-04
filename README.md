@@ -15,7 +15,7 @@ This project has several features -
 - build robust authentication flow
 - handle errors and present different types of errors
 - create, read, update and delete task from MongoDB Atlas
-- show different entities using query on documents
+- show different utility routes using query on documents
 - use Test Driven approach for effective and sustainable code 
 - write production-ready code following best practices
 
