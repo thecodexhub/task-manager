@@ -1,11 +1,23 @@
 # Task Manager
 
-Backend for Task Manager app built in NodeJS and ExpressJS using Typescript.
+Backend for Task Manager application that is developed in Typescript using NodeJS and ExpressJS. MongoDB is used as the database. 
 
-## Features:
+## Services:
 
 - [x] Authentication service
 - [x] Task management service
+
+## Features:
+
+This project has several features -
+
+- use Typescript for making it easier to read and debug
+- build robust authentication flow
+- handle errors and present different types of errors
+- create, read, update and delete task from MongoDB Atlas
+- show different entities using query on documents
+- use Test Driven approach for effective and sustainable code 
+- write production-ready code following best practices
 
 ## API Reference:
 
